@@ -14,9 +14,9 @@ TBD
 
 <!-- [![Crapht Box on Steam](pages/imgs/steam.png)](https://store.steampowered.com/app/1227090/) -->
 
-| FANTASY | COMPUTER |
+| FANTASY | PHYSICS SANDBOX |
 |----|----|
-| <img src="pages/imgs/app.png" width="256"> | Crapht Box is a **Fantasy Physics Sandbox**, inspired by the Fantasy Console genre. It brings a simulated world with a number of disks and tools, and leaves you to play, program and share creations. |
+| <img src="pages/imgs/app.png" width="256"> | Crapht Box is a **Fantasy Physics Sandbox**, <br />inspired by the Fantasy Console genre. <br />It brings a simulated world with a number of <br />disks and tools, and leaves you to play, <br /> program and share creations. |
 
 ### Technical specifications
 
