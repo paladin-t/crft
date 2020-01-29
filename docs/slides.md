@@ -12,17 +12,17 @@ Craft your circuit logic with chip elements.
 
 Craft your input/output with sensor, dynamics elements
 
-## Creating
+## Programming
 
 ![](slides/slide3.png)
 
-Edit your scene with built-in tools.
+Program your own disks.
 
-## Programming
+## Creating
 
 ![](slides/slide4.png)
 
-Program your own disks.
+Edit your scene with built-in tools.
 
 ## Sharing
 

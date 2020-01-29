@@ -16,7 +16,7 @@ TBD
 
 | FANTASY | PHYSICS SANDBOX |
 |----|----|
-| <img src="pages/imgs/app.png" width="128"> | Crapht Box is a **Fantasy Physics Sandbox**, <br />inspired by the Fantasy Console genre. <br />It brings a simulated world with a number of <br />disks and tools, and leaves you to play, <br /> program and share creations. |
+| <img src="pages/imgs/app.png" width="128"> | Crapht Box is a **Fantasy Physics Sandbox**, <br />inspired by the Fantasy Console genre. <br />It brings a simulated world with a number of <br />disks and tools, and leaves you to play, <br /> program, create and share disks. |
 
 ### Technical specifications
 
@@ -39,17 +39,17 @@ TBD
 
 Craft your machineries with physics, chip, sensor and dynamics elements.
 
-## Creating
-
-![](pages/imgs/creating0.gif)
-
-Edit your scene with built-in tools.
-
 ## Programming
 
 ![](pages/imgs/programming0.png)
 
 Program your own disks.
+
+## Creating
+
+![](pages/imgs/creating0.gif)
+
+Edit your scene with built-in tools.
 
 ## Sharing
 
