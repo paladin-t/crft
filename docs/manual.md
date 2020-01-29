@@ -4,7 +4,7 @@
 
 Click to read this [manual online](https://paladin-t.github.io/crft/docs/manual).
 
-Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. It brings an authentic world with a number of disks and tools. And leaves you to play, program and share creations.
+Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. It brings a simulated world with a number of disks and tools, and leaves you to play, program and share creations.
 
 ## Table of content
 
@@ -130,8 +130,9 @@ Crafting:
 
 ## Specifications
 
-* Display: down to 640x480, scalable
+* Display: scalable from 640x480
 * Audio: 2 music channels, 4 sound effect channels, 1 speech channel
+* Circuit clock: 60Hz
 * Code: Wren, Lua
 * Gamepad: 6 buttons (D-Pad + A/B)
 * Keyboard and mouse: supported

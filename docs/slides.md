@@ -1,7 +1,5 @@
 ## Crafting
 
-## Crafting
-
 ![](slides/slide0.png)
 
 Craft framework of your machineries with physics elements.
@@ -14,14 +12,20 @@ Craft your circuit logic with chip elements.
 
 Craft your input/output with sensor, dynamics elements
 
-## Programming
+## Creating
 
 ![](slides/slide3.png)
+
+Edit your scene with built-in tools.
+
+## Programming
+
+![](slides/slide4.png)
 
 Program your own disks.
 
 ## Sharing
 
-![](slides/slide4.png)
+![](slides/slide5.png)
 
 Share your creativity with others.
