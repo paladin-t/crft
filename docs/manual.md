@@ -1,10 +1,10 @@
 ![](imgs/logo.png)
 
+[简体中文](https://paladin-t.github.io/crft/docs/manual_cn)
+
 ## Welcome to Crapht Box
 
-This manual is still WIP.
-
-Click to read this [manual online](https://paladin-t.github.io/crft/docs/manual).
+This document is still WIP.
 
 Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. It brings a simulated world with a number of disks and tools, and leaves you to play, program and share creations.
 
