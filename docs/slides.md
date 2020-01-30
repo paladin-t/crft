@@ -1,3 +1,5 @@
+[简体中文](https://paladin-t.github.io/crft/docs/slides_cn)
+
 ## Crafting
 
 ![](slides/slide0.png)
@@ -10,7 +12,7 @@ Craft your circuit logic with chip elements.
 
 ![](slides/slide2.png)
 
-Craft your input/output with sensor, dynamics elements
+Craft your input/output with sensor, dynamics elements.
 
 ## Programming
 

@@ -1,8 +1,8 @@
-[简体中文](https://paladin-t.github.io/crft/pages/about_cn)
+[English](https://paladin-t.github.io/crft/pages/about)
 
-## About
+## 关于
 
-### Built with
+### 本游戏基于如下软件构建
 
 * BASIC8 [https://paladin-t.github.io/b8/](https://paladin-t.github.io/b8/)
 * Box2D [https://box2d.org/](https://box2d.org/)
