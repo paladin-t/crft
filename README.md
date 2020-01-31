@@ -11,9 +11,7 @@
 
 **Get Crapht Box!**
 
-TBD
-
-<!-- [![Crapht Box on Steam](pages/imgs/steam.png)](https://store.steampowered.com/app/1227090/) -->
+[![Crapht Box on Steam](pages/imgs/steam.png)](https://store.steampowered.com/app/1227090/)
 
 | FANTASY | PHYSICS SANDBOX |
 |----|----|
@@ -62,9 +60,7 @@ Share your creativity with others.
 
 ### Get Crapht Box
 
-TBD
-
-<!-- [![Crapht Box on Steam](pages/imgs/on_steam.png)](https://store.steampowered.com/app/1227090/) -->
+[![Crapht Box on Steam](pages/imgs/on_steam.png)](https://store.steampowered.com/app/1227090/)
 
 ### System requirements
 
