@@ -70,6 +70,7 @@ Share your creativity with others.
 | CPU | Core 2 Duo 1.8GHz | Core i5 2.6GHz |
 | RAM | 512MB | 2GB |
 | GPU | Intel HD 4000 | Intel HD 6000 |
+| Storage | 50MB available space | 50MB available space |
 
 <hr>
 
