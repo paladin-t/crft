@@ -280,9 +280,7 @@ Crapht Box uses the [Box2D](http://box2d.org/) engine for physics simulation.
 
 Disk in Crapht Box is mainly programmed in the [Wren](http://wren.io/) programming language.
 
-<!--
-_Experimental: It is also possible to program in the [Lua](http://www.lua.org/) programming language, using the [B95](https://github.com/paladin-t/b95) compiler implemented in Wren._
--->
+_Experimental: It is also possible to program in the [Lua](http://www.lua.org/) programming language, using the [B95](https://github.com/paladin-t/b95) compiler implemented in Wren. Subscribe to the "[Lua Loader](https://steamcommunity.com/sharedfiles/filedetails/?id=1984358157)" (ID: 1984358157) for usage._
 
 ## Directories
 
@@ -388,6 +386,7 @@ Reading/writing solvers for IO accessing:
 **Class `Resource`**
 
 * `construct load(path)`
+* `construct load(path, isrel)`
 * `construct load(type, width, height)`
 * `construct load(type, width, height, n)`
 * `unload()`
