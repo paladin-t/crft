@@ -168,7 +168,7 @@ A typical disk comes with the following files under "`${disk}`/content":
 | "scene.json" | Scene data, including map path, instantiated elements and prefabs | Built-in map/level/element editors |
 | "map.map" | Map file | Open "scene.json" with built-in map editor |
 | "disk.wren" | Disk-wise utilities | N/A |
-| "main.wren" | Main source file | Built-in code editor |
+| "main.wren" | Main source file | Built-in code editor, or external text editors |
 | "main.palette" | Palette file | N/A |
 | "sticker.png" | Disk sticker | Built-in capturing, or external image editors |
 
@@ -176,40 +176,42 @@ The meta data file "info.json" contains a number of fields that describe basic a
 
 ```js
 {
-	"lang": 16,               // 16 for Wren, 20 for Lua.
-	"usage": 0,               // Reserved, always set to 0 for now.
-	"ugcid": 0,               // 0 for common disk, otherwise with the Workshop ID of this disk.
+	"lang": 16,                  // 16 for Wren, 20 for Lua.
+	"usage": 0,                  // Reserved, always set to 0 for now.
+	"ugcid": 0,                  // 0 for common disk, otherwise with the Workshop ID of this disk.
 	"uid": "00000000-0000-0000-0000-000000000000", // Reserved.
-	"sticker": "sticker.png", // The sticker image.
-	"title": {                // The display title in different languages.
+	"sticker": "sticker.png",    // The sticker image.
+	"title": {                   // The display title in different languages.
 		"english": "Noname",
 		"chinese": "未命名"
 	},
-	"description": "",        // The description on the Workshop web page.
-	"author": "Anonymous",    // Your name here.
-	"version": "1.0",         // The version number.
-	"genre": "ANY",           // Reserved.
-	"email": "",              // Reserved.
-	"url": "",                // Reserved.
-	"creation": 0,            // Reserved.
-	"controls": [ ],          // Reserved.
-	"entries": {              // The entry file path.
+	"description": "",           // The description on the Workshop web page.
+	"author": "Anonymous",       // Your name here.
+	"version": "1.0",            // The version number.
+	"genre": "ANY",              // Reserved.
+	"email": "",                 // Reserved.
+	"url": "",                   // Reserved.
+	"creation": 0,               // Reserved.
+	"controls": [ ],             // Reserved.
+	"entries": {                 // The entry file path.
 		"main": "main.wren",
 		"editor": ""
 	},
-	"bundle": {               // The bundle name in different languages.
+	"bundle": {                  // The bundle name in different languages.
 		"english": "Noname",
 		"chinese": "未命名"
 	},
-	"priority": 100,          // A integer which controls display orders of disks.
-	"locked": false           // You have to pass previous levels before unlocking
-	                          // this one with `true`, or ready to play with `false`.
+	"priority": 100,             // A integer which controls display orders of disks.
+	"locked": false              // You have to pass previous levels before unlocking
+	                             // this one with `true`, or ready to play with `false`.
 }
 ```
 
 [HOME](#welcome-to-crapht-box)
 
 # Part II. Crafting
+
+There are four element categories in the crafting toolbox.
 
 ## Physics elements
 
@@ -234,7 +236,7 @@ The meta data file "info.json" contains a number of fields that describe basic a
 "phy/iron_slope"
 -->
 
-The physics category contains regular rigid bodies in a few shapes. Physics does not take any role in a circuit, but it does being framework in the physical scene. See tooltips in application for details.
+The physics category contains regular rigid bodies in a few shapes. It is the simplest structure in Crapht Box that does not conduct anything in a circuit, but it does work as framework in the physical scene. See tooltips in application for details.
 
 ## Sensor elements
 
@@ -303,7 +305,7 @@ The sensor category contains gamepad input, mouse/touch input, in-scene interact
 "chip/environment_now"
 -->
 
-The chip category contains signal generators, conductors, logic circuits, etc. Chip can be used as signal source, intermediate node or output reactor in a circuit. See tooltips in application for details.
+The chip category contains signal producers, conductors, mappers, consumers, etc. Chip can be used as signal source, intermediate node or output reactor in a circuit. See tooltips in application for details.
 
 ## Dynamics elements
 
@@ -346,8 +348,6 @@ Disk in Crapht Box is mainly programmed in the [Wren](http://wren.io/) programmi
 
 _Experimental: It is also possible to program in the [Lua](http://www.lua.org/) programming language, using the [B95](https://github.com/paladin-t/b95) compiler implemented in Wren._
 
-Subscribe to the "[Lua Loader](https://steamcommunity.com/sharedfiles/filedetails/?id=1984358157)" (ID: 1984358157) for usage.
-
 **Importing**
 
 ```dart
@@ -365,7 +365,7 @@ import "compiler/lua" for Lua
 
 | Key of `options` | Value | Note |
 |---|---|---|
-| `"constructor"` | `"new"`, `"ctor"` | Always use `"ctor"` for now |
+| `"constructor"` | `"new"`, `"ctor"` | Always use `"ctor"` in Crapht Box |
 
 * `compile(code)`: compiles Lua code to Wren
 	* `code`: the source in Lua
@@ -386,6 +386,8 @@ var lua = Lua.new()
 var code = lua.compile("print(22 / 7)")
 System.print(code.toString)
 ```
+
+Subscribe to the "[Lua Loader](https://steamcommunity.com/sharedfiles/filedetails/?id=1984358157)" (ID: 1984358157) for details.
 
 ## Directories
 
@@ -417,7 +419,7 @@ Reading/writing solvers for IO accessing:
 
 ## Coordinates
 
-Crapht Box implements two kinds of coordinate systems. It starts from the top-left corner for graphics primitives, GUI overlays, etc. and starts from the bottom-left corner for in-scene objects.
+Crapht Box implements two kinds of coordinate systems. The first one starts from the top-left corner for graphics primitives, GUI overlays, etc. and the second one starts from the bottom-left corner for in-scene objects.
 
 Screen space:
 
@@ -433,7 +435,7 @@ Besides, there's another local space which is similar to the world space, but th
 
 ### Basic module
 
-Crapht Box runs on top of a [BASIC](https://paladin-t.github.io/b8/) system. This module contains wrappers to communicate with it.
+Crapht Box runs on top of a [BASIC](https://paladin-t.github.io/b8/) system. This module contains wrappers to communicate to it.
 
 **Importing**
 
@@ -458,34 +460,46 @@ import "basic" for Basic, Terminal, Resource
 
 * **static** `clip()`: resets clip state
 * **static** `clip(x, y, w, h)`: sets clip state in screen space
-* **static** `text(x, y, txt, col)`: draws an ASCII text in screen space
+* **static** `text(x, y, txt, col)`: draws an ASCII text in screen space, same as `text(x, y, txt, col, false)`
+	* `col`: `Color`
 * **static** `text(x, y, txt, col, isutf)`: draws an ASCII or UTF text in screen space
-	* `isutf`: `true` for UTF text, otherwise for ASCII; UTF `String` will be cached until ejecting a disk, so it's recommended to use ASCII for frequently changing text, eg. FPS, RAM stat. etc.
+	* `col`: `Color`
+	* `isutf`: `true` for UTF text, otherwise for ASCII; UTF `String` is cached until ejecting a disk, so it's recommended to use ASCII for frequently changing text, eg. FPS, RAM stat. etc. only set this parameter to `true` for relatively static text when you really need
 * **static** `plot(x, y, col)`: draws a point in screen space
+	* `col`: `Color`
 * **static** `line(x0, y0, x1, y1, w, col)`: draws a line in screen space
 	* `w`: the line width
+	* `col`: `Color`
 * **static** `circ(x, y, r, col)`: draws a circle in screen space
 	* `r`: the radius
+	* `col`: `Color`
 * **static** `circfill(x, y, r, col)`: fills a circle in screen space
 	* `r`: the radius
+	* `col`: `Color`
 * **static** `ellipse(x, y, rx, ry, col)`: draws an ellipse in screen space
 	* `rx`: the radius in the x axis
 	* `ry`: the radius in the y axis
+	* `col`: `Color`
 * **static** `ellipsefill(x, y, rx, ry, col)`: fills an ellipse in screen space
 	* `rx`: the radius in the x axis
 	* `ry`: the radius in the y axis
+	* `col`: `Color`
 * **static** `arc(x, y, r, sa, ea, pie, col)`: draws an arc/bow in screen space
 	* `r`: the radius
 	* `sa`: start angle
 	* `ea`: end angle
 	* `pie`: `true` for pie shape
+	* `col`: `Color`
 * **static** `arcfill(x, y, r, sa, ea, pie, col)`: fills a bow in screen space
 	* `r`: the radius
 	* `sa`: start angle
 	* `ea`: end angle
 	* `pie`: `true` for pie shape
+	* `col`: `Color`
 * **static** `rect(x0, y0, x1, y1, col)`: draws a rectangle in screen space
+	* `col`: `Color`
 * **static** `rectfill(x0, y0, x1, y1, col)`: fills a rectangle in screen space
+	* `col`: `Color`
 
 * **static** `sget(sprite, x, y [, frame])`: gets a palette index at a specific position of a sprite
 	* `frame`: the frame index, defaults to 0
@@ -581,15 +595,17 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 * **static** `write(t)`: writes something to the terminal
 	* `t`: the text to write
-* **static** `write(t, c)`: writes something to the terminal
+* **static** `write(t, c)`: writes something to the terminal in a specific color
 	* `t`: the text to write
-* **static** `write(t, r, g, b, a)`: writes something to the terminal
+	* `c`: `Color`
+* **static** `write(t, r, g, b, a)`: writes something to the terminal in a specific color
 	* `t`: the text to write
 * **static** `writeLine(t)`: writes something to the terminal with a following newline
 	* `t`: the text to write
-* **static** `writeLine(t, c)`: writes something to the terminal with a following newline
+* **static** `writeLine(t, c)`: writes something to the terminal with a following newline in a specific color
 	* `t`: the text to write
-* **static** `writeLine(t, r, g, b, a)`: writes something to the terminal with a following newline
+	* `c`: `Color`
+* **static** `writeLine(t, r, g, b, a)`: writes something to the terminal with a following newline in a specific color
 	* `t`: the text to write
 * **static** `backspace()`: deletes a character backward
 * **static** `deleteLine()`: deletes a line
@@ -597,11 +613,11 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 **Class `Resource`**
 
-* `construct load(path)`: constructs a `Resource` by loading from file
+* `construct load(path)`: constructs a `Resource` by loading from file, same as `construct load(path, false)`
 	* `path`: the file path to load
 * `construct load(path, isrel)`: constructs a `Resource` by loading from file
 	* `path`: the file path to load
-	* `isrel`: `true` for relative path, otherwise for absolute
+	* `isrel`: `true` for relative path, otherwise for absolute; can use shurtcut prefixes (`"app://"`, `"disk://"`, `"doc://"`) if set to `false`
 * `construct load(type, width, height)`: constructs a `Resource` by loading a blank data
 	* `path`: can be `"sprite"`, `"map"`, `"quantized"`
 * `construct load(type, width, height, n)`: constructs a `Resource` by loading a blank data
@@ -610,8 +626,8 @@ Tn     Sets the number of "L4"s per minute (tempo). Valid values are from 32 to 
 
 * `count`: gets the frame count
 
-* `width`: gets the width of a frame
-* `height`: gets the height of a frame
+* `width`: gets the width of any frame
+* `height`: gets the height of any frame
 
 ## Standard
 
@@ -625,7 +641,7 @@ import "collection" for Stack, Mapper
 
 **Class `Stack`**
 
-[`Stack`](https://simple.wikipedia.org/wiki/Stack_(data_structure)) is a kind of LIFO data structure.
+[Stack](https://simple.wikipedia.org/wiki/Stack_(data_structure)) is a kind of LIFO data structure.
 
 * `construct new()`: constructs a `Stack`
 * `construct new(threshold)`: constructs a `Stack` with a specific capacity threshold
@@ -669,6 +685,8 @@ import "coroutine" for Coroutine
 
 **Class `Coroutine`**
 
+[Coroutine](https://en.wikipedia.org/wiki/Coroutine) can suspend their execution and allows re-entry at multiple entry points. This `Coroutine` dispatcher in Crapht Box acts similar to the Unity3D's, it accepts and manages Wren `Fiber` and updates them at a specific time point.
+
 * `construct new()`: constructs a `Coroutine` dispatcher
 
 * `isEmpty`: gets whether there's no alive coroutine in this dispatcher
@@ -692,11 +710,11 @@ import "datetime" for DateTime
 
 **Class `DateTime`**
 
-* **static** `ticks`: gets ticks in seconds since startup
+* **static** `ticks`: gets ticks in seconds since startup; similar to Wren's `System.clock` but do not mix them together for time counting
 	* returns the wall clock independent ticks in seconds since startup
 
 * **static** `now`: gets current data
-	* returns a `List` of `Num`s denoting `[ yr, mo, day, hr, min, sec ]`
+	* returns a `List` of `Num`s respectively for year, month, day, hour, minute and second
 
 ### Image module
 
@@ -932,7 +950,9 @@ import "json" for Json
 
 * **static** `OrderedKey`: the helper key constant in a JSON object which only tells the order
 
-<!-- * **static** `tokenize(string)`: gets a `List` of tokens of a JSON `String` -->
+<!--
+* **static** `tokenize(string)`: gets a `List` of tokens of a JSON `String`
+-->
 
 * **static** `parse(string [, ordered])`: parses a JSON `String` to Wren object
 	* `string`: the JSON `String` to parse
@@ -954,7 +974,7 @@ import "keycode" for KeyCode
 
 **Class `KeyCode`**
 
-This class contains constants for mouse, gamepad and keyboard keys, the names quite tell what they are
+This class contains constants for mouse, gamepad and keyboard keys, the names quite tell what they are.
 
 * **static** `MouseLeft`
 * **static** `MouseMiddle`
@@ -1307,9 +1327,11 @@ import "common" for Direction, Component, Group, Vec2, Vec3, Vec4, Rect, Rot, Co
 * `type = (value)`: sets the type of the element of this `Handle`
 
 * `category`: gets the category of the element
+	* returns `String`/`null`
 * `category = (value)`: sets the category of the element
 
 * `name`: gets the name of the element
+	* returns `String`/`null`
 * `name = (value)`: sets the name of the element
 
 * `nature`: gets the nature of the element, can be one of the values of the `Nature` class in module "alchemy"
@@ -1319,47 +1341,66 @@ import "common" for Direction, Component, Group, Vec2, Vec3, Vec4, Rect, Rot, Co
 * `group = (value)`: sets the group of the element
 
 * `instantiated`: gets whether the element is instantiated from toolbox
+	* returns `Bool`
 
 * `operable`: gets whether the element is operable
+	* returns `Bool`
 
 * `queriable`: gets whether the element is queriable by filter, query and ray casting
+	* returns `Bool`
 * `queriable = (value)`: sets whether the element is queriable by filter, query and ray casting
 
 * `joinable`: gets whether the element is joinable with neighbor elements
+	* returns `Bool`
 * `joinable = (value)`: sets whether the element is joinable with neighbor elements
 
 * `conductible`: gets whether the element is conductible with neighbor chip elements
+	* returns `Bool`
 * `conductible = (value)`: sets whether the element is conductible with neighbor chip elements
 
 * `contactable`: gets whether the element triggers contact callbacks
+	* returns `Bool`
 * `contactable = (value)`: sets whether the element triggers contact callbacks
 
 * `platform`: gets whether the element is a platform
+	* returns `Bool`
 * `platform = (value)`: sets whether the element is a platform
 
 * `visible`: gets whether the element is visible
+	* returns `Bool`
 * `visible = (value)`: sets whether the element is visible
 
 * `awake`: gets whether the element is awake
+	* returns `Bool`
 * `awake = (value)`: sets whether the element is awake
 
 * `position`: gets the position of the element
+	* returns `Vec2`
 * `position = (value)`: sets the position of the element
 
 * `rotation`: gets the rotation of the element
+	* returns `Rot`
 * `rotation = (value)`: sets the rotation of the element
 
 * `size`: gets the size of the element
+	* returns `Vec2`
 * `size = (value)`: sets the size of the element
 
 * `aabb`: gets the AABB of the element
+	* returns `Rect`
 
 * `up`: gets the normalized `Vec2` on the y+ axis in local space of the element
+	* returns `Vec2`
 * `down`: gets the normalized `Vec2` on the y- axis in local space of the element
+	* returns `Vec2`
 * `left`: gets the normalized `Vec2` on the x- axis in local space of the element
+	* returns `Vec2`
 * `right`: gets the normalized `Vec2` on the x+ axis in local space of the element
+	* returns `Vec2`
 * `direct(vec)`: gets the `Vec2` in a specific direction in local space of the element
+	* returns `Vec2`
 * `inverse(vec)`: gets the inverse `Vec2` in a specific direction in local space of the element
+	* returns `Vec2`
 
 * `vibrate(interval, amplitude)`: vibrates the element
 
@@ -1367,18 +1408,23 @@ import "common" for Direction, Component, Group, Vec2, Vec3, Vec4, Rect, Rot, Co
 * `resource = (value)`: sets the resource of the element
 
 * `color`: gets the color of the element
+	* returns `Color`
 * `color = (value)`: sets the color of the element
 
 * `renderableRotation`: gets the rotation of the renderable resource of the element
+	* returns `Rot`
 * `renderableRotation = (value)`: sets the rotation of the renderable resource of the element
 
 * `renderableHFlip`: gets whether flips horizontally for the renderable resource of the element
+	* returns `Bool`
 * `renderableHFlip = (value)`: sets whether flips horizontally for the renderable resource of the element
 
 * `renderableVFlip`: gets whether flips vertically for the renderable resource of the element
+	* returns `Bool`
 * `renderableVFlip = (value)`: sets whether flips vertically for the renderable resource of the element
 
 * `length`: gets the total frame count of any loaded sprite resource of the element
+	* returns `Num`
 
 * `play([begin, end [, loop, init]])`: plays a specific range of frames for animation
 	* `begin`: beginning frame index or tag `String`, starts from 0, defaults to -1
@@ -1387,6 +1433,7 @@ import "common" for Direction, Component, Group, Vec2, Vec3, Vec4, Rect, Rot, Co
 	* `init`: whether initializes to the beginning frame, defaults to `true`
 
 * `hp`: gets the hitpoints of the element
+	* returns `Num`
 * `hp = (points)`: sets the hitpoints of the element
 
 * `conduct([conn])`: conducts this chip element with neighbors
@@ -1398,26 +1445,39 @@ import "common" for Direction, Component, Group, Vec2, Vec3, Vec4, Rect, Rot, Co
 * `set(key, val)`: sets the value to a specific key of the element
 
 * `bounce`: gets the bounce rate of the element
+	* returns `Num`
 * `bounce = (rate)`: sets the bounce rate of the element
 
 * `fixedRotation`: gets whether the rotation of the element is fixed
+	* returns `Bool`
 * `fixedRotation = (fixed)`: sets whether the rotation of the element is fixed
 
 * `linearDamping`: gets the linear damping of the element
+	* returns `Num`
 * `linearDamping = (damping)`: sets the linear damping of the element
 * `angularDamping`: gets the angular damping of the element
+	* returns `Num`
 * `angularDamping = (damping)`: sets the angular damping of the element
 
 * `linearVelocity`: gets the linear velocity of the element
+	* returns `Vec2`
 * `linearVelocity = (velocity)`: sets the linear velocity of the element
 * `angularVelocity`: gets the angular velocity of the element
+	* returns `Num`
 * `angularVelocity = (omega)`: sets the angular velocity of the element
 
 * `applyForce(force, point)`: applies specific force to a specific point of the element
+	* `force`: `Vec2`
+	* `point`: `Vec2`
 * `applyForceToCenter(force)`: applies specific force to the center point of the element
+	* `force`: `Vec2`
 * `applyTorque(torque)`: applies specific torque to the element
+	* `torque`: `Num`
 * `applyLinearImpulse(impulse, point)`: applies specific linear impulse to a specific point of the element
+	* `impulse`: `Vec2`
+	* `point`: `Vec2`
 * `applyAngularImpulse(impulse)`: applies specific angular impulse to the element
+	* `impulse`: `Num`
 
 * `addFixture(params, shape)`: adds a fixture to the element
 * `clearFixtures()`: clears all fixtures of the element
@@ -1436,15 +1496,17 @@ import "physics" for WorldParam, World, Shape, Fixture, Body, JointParam, Joint
 
 **Class `WorldParam`**
 
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of a `World`.
+
 * **static** `MapLayerScale`
 
 **Class `World`**
 
-* **static** `unit`: gets how much in world space is a unit of grid
+* **static** `unit`: gets how much in world space a unit of grid is
 
 * **static** `new(g)`: creates a `World` element
 	* `g`: the gravity of the `World` element
-	* returns the created `World` handle
+	* returns the created `World` handle or `null`
 
 **Class `Shape`**
 
@@ -1467,9 +1529,11 @@ import "physics" for WorldParam, World, Shape, Fixture, Body, JointParam, Joint
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Body` element, can be one of the above constants
 	* `pos`: the initial position
-	* returns the created `Body` handle
+	* returns the created `Body` handle or `null`
 
 **Class `JointParam`**
+
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of a `Joint`.
 
 * **static** `BreakForceSquare`
 * **static** `Joint1`
@@ -1522,15 +1586,15 @@ import "physics" for WorldParam, World, Shape, Fixture, Body, JointParam, Joint
 * **static** `new(hworld, type, params)`: creates a `Joint` element
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Joint` element, can be one of the above constants
-	* returns the created `Joint` handle
+	* returns the created `Joint` handle or `null`
 * **static** `new(hworld, type, params, options)`: creates a `Joint` element
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Joint` element, can be one of the above constants
-	* returns the created `Joint` handle
+	* returns the created `Joint` handle or `null`
 * **static** `new(hworld, type, params, options , refocusOnBroken)`: creates a `Joint` element
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Joint` element, can be one of the above constants
-	* returns the created `Joint` handle
+	* returns the created `Joint` handle or `null`
 
 <!--
 ### Rope module
@@ -1543,12 +1607,15 @@ import "rope" for RopeParam, Rope
 
 **Class `RopeParam`**
 
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of a `Rope`.
+
 * **static** `BreakForceSquare`
 
 **Class `Rope`**
 
 * **static** `new(hworld, hbodya, hbodyb, segments)`: creates a `Rope` element
 	* `hworld`: the parent `World` handle
+	* returns the created `Rope` handle or `null`
 -->
 
 ### Particles module
@@ -1578,18 +1645,20 @@ import "particles" for Particle, ParticleSystem, ParticleGroupParam, ParticleGro
 
 * **static** `new(hworld)`: creates a `ParticleSystem` element
 	* `hworld`: the parent `World` handle
-	* returns the created `ParticleSystem` handle
+	* returns the created `ParticleSystem` handle or `null`
 * **static** `new(hworld, gravityScale)`: creates a `ParticleSystem` element
 	* `hworld`: the parent `World` handle
 	* `gravityScale`: the gravity scale
-	* returns the created `ParticleSystem` handle
+	* returns the created `ParticleSystem` handle or `null`
 * **static** `new(hworld, gravityScale, density)`: creates a `ParticleSystem` element
 	* `hworld`: the parent `World` handle
 	* `gravityScale`: the gravity scale
 	* `density`: the density
-	* returns the created `ParticleSystem` handle
+	* returns the created `ParticleSystem` handle or `null`
 
 **Class `ParticleGroupParam`**
+
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of a `ParticleGroup`.
 
 * **static** `LifetimeBegin`
 * **static** `LifetimeEnd`
@@ -1609,11 +1678,11 @@ import "particles" for Particle, ParticleSystem, ParticleGroupParam, ParticleGro
 
 * **static** `new(handle)`: creates a `ParticleGroup` element
 	* `handle`: the parent `World` or `ParticleSystem` handle
-	* returns the created `ParticleGroup` handle
+	* returns the created `ParticleGroup` handle or `null`
 * **static** `new(handle, shape)`: creates a `ParticleGroup` element
 	* `handle`: the parent `World` or `ParticleSystem` handle
 	* `shape`: the shape of the initial emitting area
-	* returns the created `ParticleGroup` handle
+	* returns the created `ParticleGroup` handle or `null`
 
 **Class `ParticleEmitter`**
 
@@ -1638,6 +1707,8 @@ Blank.
 Blank.
 
 **Class `ChipParam`**
+
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of a `Chip`.
 
 * **static** `Value`
 * **static** `Switchable`
@@ -1702,7 +1773,7 @@ Blank.
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Chip` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Chip.ConstantByte`
 	* `pos`: the initial position
-	* returns the created `Chip` handle
+	* returns the created `Chip` handle or `null`
 
 ### Sensor module
 
@@ -1729,7 +1800,7 @@ import "sensor" for Sensor
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Sensor` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Sensor.GamepadDown`
 	* `pos`: the initial position
-	* returns the created `Sensor` handle
+	* returns the created `Sensor` handle or `null`
 
 ### Dynamics module
 
@@ -1744,6 +1815,8 @@ import "dynamics" for Power, DynamicsParam, Dynamics
 Blank.
 
 **Class `DynamicsParam`**
+
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of a `Dynamics`.
 
 * **static** `QuotaCycles`
 
@@ -1770,7 +1843,7 @@ Blank.
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Dynamics` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Dynamics.Jet`
 	* `pos`: the initial position
-	* returns the created `Dynamics` handle
+	* returns the created `Dynamics` handle or `null`
 
 ### AI module
 
@@ -1792,6 +1865,8 @@ import "ai" for Behaviour, AiParam, Ai
 
 **Class `AiParam`**
 
+Use the following constants to get/set properties with `Handle.get`/`Handle.set` of an `Ai`.
+
 * **static** `AwakeDistance`: read, write
 * **static** `SleepingDistance`: read, write
 * **static** `Behaviour`: readonly
@@ -1807,7 +1882,7 @@ import "ai" for Behaviour, AiParam, Ai
 	* `hworld`: the parent `World` handle
 	* `type`: the type of the `Ai` element, can be one of the above constants
 	* `pos`: the initial position
-	* returns the created `AI` handle
+	* returns the created `AI` handle or `null`
 
 ### Alchemy module
 
@@ -1881,7 +1956,11 @@ import "camera" for Camera
 * **static** `pixelsPerUnit = (value)`: sets the value of pixels per unit of this camera
 
 * **static** `toScreen(value)`: converts a value from world space to screen space observed by this camera
+	* `value`: `Vec2`/`Num`
+	* returns `Vec2`/`Num`
 * **static** `fromScreen(value)`: converts a value from screen space to world space observed by this camera
+	* `value`: `Vec2`/`Num`
+	* returns `Vec2`/`Num`
 
 ### Minimap module
 
@@ -1926,7 +2005,7 @@ import "toolbox" for Toolbox
 	* `contactable`: defaults to `false`
 	* `operable`: defaults to `false`
 	* `group`: defaults to `Group.Environment`
-	* returns the instantiated element `Handle`
+	* returns the instantiated element `Handle` or `null`
 
 ### Sandbox module
 
@@ -2260,7 +2339,7 @@ import "layout" for Container, Panel, Flow, Grid, Layout
 * `offset`: gets the offset of this overlay
 * `step`: gets the step in both axis of this overlay
 * `padding`: gets the padding of this overlay
-* `sameline`: gets whether this overlay goes after the previous one in a same line
+* `sameline`: gets whether this overlay goes after the previous one in the same line
 * `active`: gets whether this overlay is active
 * `active = (value)`: sets whether this overlay is active
 
@@ -2311,7 +2390,7 @@ import "layout" for Container, Panel, Flow, Grid, Layout
 <!--
 * `step`: gets the step in both axis of this overlay
 * `padding`: gets the padding of this overlay
-* `sameline`: gets whether this overlay goes after the previous one in a same line
+* `sameline`: gets whether this overlay goes after the previous one in the same line
 
 * `begin(layout)`: begins this overlay
 -->
@@ -2730,9 +2809,9 @@ Switch to the `Workshop` tab, then click the edit button to edit your creations:
 
 ![](imgs/gui/button_edit.png)
 
-The built-in code editor will load the entry source code of the selected disk. To edit other assets, navigate to the directory of a specific disk on your local storage, then use whatever external editors you want for assets.
-
 Notice that you cannot edit readonly disks.
+
+The built-in code editor loads the entry source code of the selected disk. To edit other assets, navigate to the directory of a specific disk on your local storage, then use proper external text or image editors to open it.
 
 ## Map editor
 
@@ -2756,9 +2835,9 @@ This editor is for placing regular elements. In the usual case it saves to the "
 
 # Part V. Sharing
 
-You can share your creative disks with the Steam community via Workshop, subscribe to play others' games and programs, and discuss or comment on any creation.
+You can share your creative disks with the Steam community via Workshop, subscribe to play others' games and programs, and discuss or comment on any submitted disk.
 
-Switch to the `Workshop` tab on the main screen to use following operations.
+Switch to the `Workshop` tab on the main screen to use the following operations.
 
 ## Exporter and importer
 
@@ -2766,17 +2845,17 @@ Click `Export...` for exporting.
 
 Click `Import...` for importing.
 
-Exported disks are standard zip packages.
+Exported disk is archived in standard zip package.
 
 ## Submitting
 
 To submit a new disk to Workshop, select it, then click `Push`.
 
-Use an external editor to modify the "info.json" meta file before pushing as you need. Don't forget to close any external editors that opening the source disk you are going to push, pull, etc.
+Use an external text editor to modify the ["info.json"](#disk-structure) meta file before pushing as you need. Don't forget to close any external editors that are opening the source disk you are going to push or pull.
 
-It's recommended to use a good looking preview, choose a proper genre, and write necessary introduction and notes to help others to get better acquainted with your submission. You could edit submitted information in browser later, including changing description, chaging visibility, updating preview images and videos, etc.
+It's recommended to pick a proper disk and bundle name, apply a good looking sticker, and write necessary introduction and notes to help others to get better acquainted with your submission before pushing. You can edit submitted information in browser after that, including changing the description, changing the visibility, updating the sticker images and videos, etc.
 
-You need to agree to the Steam Workshop's terms of service for submitting.
+You need to agree to the [Steam Workshop's terms of service](https://steamcommunity.com/sharedfiles/workshoplegalagreement) for submitting.
 
 ## Subscribing
 
@@ -2784,7 +2863,7 @@ Use a web browser to explore the [Crapht Box Workshop](https://steamcommunity.co
 
 ![](imgs/workshop_subscribe.png)
 
-All subscribed disks will be automatically downloaded for mounting.
+All subscribed disks are automatically downloaded for mounting.
 
 ## Unsubscribing
 
