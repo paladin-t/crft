@@ -1465,6 +1465,8 @@ import "physics" for WorldParam, World, Shape, Fixture, Body, JointParam, Joint
 
 * **static** `new(hworld, type, pos)`: creates a `Body` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Body` element, can be one of the above constants
+	* `pos`: the initial position
 	* returns the created `Body` handle
 
 **Class `JointParam`**
@@ -1519,12 +1521,15 @@ import "physics" for WorldParam, World, Shape, Fixture, Body, JointParam, Joint
 
 * **static** `new(hworld, type, params)`: creates a `Joint` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Joint` element, can be one of the above constants
 	* returns the created `Joint` handle
 * **static** `new(hworld, type, params, options)`: creates a `Joint` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Joint` element, can be one of the above constants
 	* returns the created `Joint` handle
 * **static** `new(hworld, type, params, options , refocusOnBroken)`: creates a `Joint` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Joint` element, can be one of the above constants
 	* returns the created `Joint` handle
 
 <!--
@@ -1576,9 +1581,12 @@ import "particles" for Particle, ParticleSystem, ParticleGroupParam, ParticleGro
 	* returns the created `ParticleSystem` handle
 * **static** `new(hworld, gravityScale)`: creates a `ParticleSystem` element
 	* `hworld`: the parent `World` handle
+	* `gravityScale`: the gravity scale
 	* returns the created `ParticleSystem` handle
 * **static** `new(hworld, gravityScale, density)`: creates a `ParticleSystem` element
 	* `hworld`: the parent `World` handle
+	* `gravityScale`: the gravity scale
+	* `density`: the density
 	* returns the created `ParticleSystem` handle
 
 **Class `ParticleGroupParam`**
@@ -1604,6 +1612,7 @@ import "particles" for Particle, ParticleSystem, ParticleGroupParam, ParticleGro
 	* returns the created `ParticleGroup` handle
 * **static** `new(handle, shape)`: creates a `ParticleGroup` element
 	* `handle`: the parent `World` or `ParticleSystem` handle
+	* `shape`: the shape of the initial emitting area
 	* returns the created `ParticleGroup` handle
 
 **Class `ParticleEmitter`**
@@ -1687,10 +1696,12 @@ Blank.
 * **static** `BitwiseRShift`
 * **static** `EnvironmentNow`
 
-* **static** `frequency`: gets the frequency of the circuit clock
+* **static** `frequency`: gets the frequency of the circuit clock, always returns 60(Hz)
 
 * **static** `new(hworld, type, pos)`: creates a `Chip` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Chip` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Chip.ConstantByte`
+	* `pos`: the initial position
 	* returns the created `Chip` handle
 
 ### Sensor module
@@ -1716,6 +1727,8 @@ import "sensor" for Sensor
 
 * **static** `new(hworld, type, pos)`: creates a `Sensor` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Sensor` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Sensor.GamepadDown`
+	* `pos`: the initial position
 	* returns the created `Sensor` handle
 
 ### Dynamics module
@@ -1755,6 +1768,8 @@ Blank.
 
 * **static** `new(hworld, type, pos)`: creates a `Dynamics` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Dynamics` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Dynamics.Jet`
+	* `pos`: the initial position
 	* returns the created `Dynamics` handle
 
 ### AI module
@@ -1790,6 +1805,8 @@ import "ai" for Behaviour, AiParam, Ai
 
 * **static** `new(hworld, type, pos)`: creates an `Ai` element
 	* `hworld`: the parent `World` handle
+	* `type`: the type of the `Ai` element, can be one of the above constants
+	* `pos`: the initial position
 	* returns the created `AI` handle
 
 ### Alchemy module
@@ -2393,7 +2410,7 @@ import "dictionary" for Dictionary
 **Importing**
 
 ```dart
-import "star" for Point, Completeness, Star
+import "star" for Star
 ```
 
 <!--
@@ -2460,7 +2477,7 @@ import "star" for Point, Completeness, Star
 **Importing**
 
 ```dart
-import "prefab" for Fix, Prefab
+import "prefab" for Prefab
 ```
 
 <!--
