@@ -676,7 +676,7 @@ import "coroutine" for Coroutine
 
 * `clear()`: clears all coroutines
 * `start(co [, ...])`: starts a coroutine with optional arguments
-	* `co`: `Fn` | `Fiber`
+	* `co`: `Fn`/`Fiber`
 	* `...`: the option arguments
 
 * `update(delta)`: updates this dispatcher
@@ -1132,8 +1132,8 @@ import "common" for Direction, Component, Group, Vec2, Vec3, Vec4, Rect, Rot, Co
 	* `other`: `Vec2`
 	* returns `Num`
 * `cross(other)`: gets the cross product of this and another value or `Num`
-	* `other`: `Vec2` | `Num`
-	* returns `Num` | `Vec2`
+	* `other`: `Vec2`/`Num`
+	* returns `Num`/`Vec2`
 
 * `angle()`: gets the angle from the x+ axis to this value
 	* returns `Num`
