@@ -1,4 +1,5 @@
 [English](https://paladin-t.github.io/crft/pages/about)
+[首页](https://paladin-t.github.io/crft/README_cn)
 
 ## 关于
 
