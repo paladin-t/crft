@@ -1,18 +1,19 @@
 [简体中文](https://paladin-t.github.io/crft/docs/slides_cn)
+[Homepage](https://paladin-t.github.io/crft/)
 
 ## Crafting
 
 ![](slides/slide0.png)
 
-Craft framework of your machineries with physics elements.
+Craft the framework of your machineries with the physics elements.
 
 ![](slides/slide1.png)
 
-Craft your circuit logic with chip elements.
+Craft your circuit logic with the chip elements.
 
 ![](slides/slide2.png)
 
-Craft your input/output with sensor, dynamics elements.
+Craft your input/output with the sensor, dynamics elements.
 
 ## Programming
 
@@ -24,7 +25,7 @@ Program your own disks.
 
 ![](slides/slide4.png)
 
-Edit your scene with built-in tools.
+Edit your scene with the built-in tools.
 
 ## Sharing
 

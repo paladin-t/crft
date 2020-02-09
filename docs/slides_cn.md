@@ -1,4 +1,5 @@
 [English](https://paladin-t.github.io/crft/docs/slides)
+[首页](https://paladin-t.github.io/crft/README_cn)
 
 ## 搭建
 

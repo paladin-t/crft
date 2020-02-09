@@ -84,13 +84,15 @@ Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. 
 	* [Element editor](#element-editor)
 
 * Part V. Sharing
-	* [Exporter and importer](#exporter-and-importer)
-	* [Submitting](#submitting)
-	* [Subscribing](#subscribing)
-	* [Unsubscribing](#unsubscribing)
-	* [Pushing](#pushing)
-	* [Pulling](#pulling)
-	* [Forking](#forking)
+	* [Workshop](#workshop)
+		* [Submitting](#submitting)
+		* [Subscribing](#subscribing)
+		* [Unsubscribing](#unsubscribing)
+		* [Pushing](#pushing)
+		* [Pulling](#pulling)
+		* [Forking](#forking)
+	* [Archiving](#archiving)
+		* [Exporter and importer](#exporter-and-importer)
 
 [HOME](#welcome-to-crapht-box)
 
@@ -2835,19 +2837,13 @@ This editor is for placing regular elements. In the usual case it saves to the "
 
 # Part V. Sharing
 
-You can share your creative disks with the Steam community via Workshop, subscribe to play others' games and programs, and discuss or comment on any submitted disk.
-
 Switch to the `Workshop` tab on the main screen to use the following operations.
 
-## Exporter and importer
+## Workshop
 
-Click `Export...` for exporting.
+You can share your creative disks with the Steam community via Workshop, subscribe to play others' games and programs, and discuss or comment on any submitted disk.
 
-Click `Import...` for importing.
-
-Exported disk is archived in standard zip package.
-
-## Submitting
+### Submitting
 
 To submit a new disk to Workshop, select it, then click `Push`.
 
@@ -2855,9 +2851,11 @@ Use an external text editor to modify the ["info.json"](#disk-structure) meta fi
 
 It's recommended to pick a proper disk and bundle name, apply a good looking sticker, and write necessary introduction and notes to help others to get better acquainted with your submission before pushing. You can edit submitted information in browser after that, including changing the description, changing the visibility, updating the sticker images and videos, etc.
 
+Notice that Crapht Box only uploads the disk itself, which excludes any persistence files.
+
 You need to agree to the [Steam Workshop's terms of service](https://steamcommunity.com/sharedfiles/workshoplegalagreement) for submitting.
 
-## Subscribing
+### Subscribing
 
 Use a web browser to explore the [Crapht Box Workshop](https://steamcommunity.com/app/1227090/workshop/) on Steam to make subscriptions:
 
@@ -2865,20 +2863,30 @@ Use a web browser to explore the [Crapht Box Workshop](https://steamcommunity.co
 
 All subscribed disks are automatically downloaded for mounting.
 
-## Unsubscribing
+### Unsubscribing
 
 Click `Unsubscribe` on an already subscribed disk in browser or application to stop following it.
 
-## Pushing
+### Pushing
 
 When you want to push modifications of a submitted disk, select the disk, then click `Push`.
 
-## Pulling
+### Pulling
 
 All subscribed disks are supposed to be updated automatically when Crapht Box boots up, but in case you'd like to check updates manually, just click `Pull`.
 
-## Forking
+### Forking
 
 Click `Fork` to derive from a selected disk.
+
+## Archiving
+
+### Exporter and importer
+
+Click `Export...` for exporting.
+
+Click `Import...` for importing.
+
+Exported disk is archived in standard zip package.
 
 [HOME](#welcome-to-crapht-box)
