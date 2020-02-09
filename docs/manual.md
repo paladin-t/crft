@@ -2084,6 +2084,9 @@ import "history" for History
 
 **Class `History`**
 
+* **static** `isEmpty`: gets whether the history stack does not contain any undoable operation
+* **static** `count`: gets the count of the undoable operations of the history stack
+
 * **static** `undoable`: gets whether the history stack is undoable
 	* returns `true` for undoable, otherwise `false`
 * **static** `undoable = (value)`: sets whether the history stack is undoable
