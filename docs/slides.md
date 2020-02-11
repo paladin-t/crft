@@ -1,4 +1,4 @@
-[简体中文](https://paladin-t.github.io/crft/docs/slides_cn)
+[简体中文](https://paladin-t.github.io/crft/docs/slides_cn) |
 [Homepage](https://paladin-t.github.io/crft/)
 
 ## Crafting

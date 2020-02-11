@@ -1,7 +1,7 @@
-![](imgs/logo.png)
-
 [简体中文](https://paladin-t.github.io/crft/docs/manual_cn) |
 [Homepage](https://paladin-t.github.io/crft/)
+
+![](imgs/logo.png)
 
 ## Welcome to Crapht Box
 
@@ -372,12 +372,14 @@ import "compiler/lua" for Lua
 * `compile(code)`: compiles Lua code to Wren
 	* `code`: the source in Lua
 	* returns the compiled code object
+
 <!-- * `compile(code, debug)`: compiles Lua code to Wren
 	* `code`: the source in Lua
 	* `debug`: whether generates debug information
-	* returns the compiled code object -->
+	* returns the compiled code object
+-->
 
-Eg.
+E.g.
 
 ```dart
 import "b95" for Lua
@@ -394,8 +396,8 @@ Subscribe to the "[Lua Loader](https://steamcommunity.com/sharedfiles/filedetail
 All data and editable disks are stored in a library directory on local storage. The root path of `${Documents}` is:
 
 * "C:/Users/YourName/Documents/Crapht Box/" on Windows
-<!--
-* "/Users/YourName/Documents/Crapht Box/" on MacOS
+
+<!-- * "/Users/YourName/Documents/Crapht Box/" on MacOS
 * "/home/YourName/Documents/Crapht Box/" on Linux
 -->
 
@@ -458,13 +460,13 @@ import "basic" for Basic, Terminal, Resource
 	* `val`: the value to be released
 	* returns `true` for success, otherwise `false`
 
-* **static** `clip()`: resets clip state
 * **static** `clip(x, y, w, h)`: sets clip state in screen space
+* **static** `clip()`: resets clip state
 * **static** `text(x, y, txt, col)`: draws an ASCII text in screen space, same as `text(x, y, txt, col, false)`
 	* `col`: `Color`
 * **static** `text(x, y, txt, col, isutf)`: draws an ASCII or UTF text in screen space
 	* `col`: `Color`
-	* `isutf`: `true` for UTF text, otherwise for ASCII; UTF `String` is cached until ejecting a disk, so it's recommended to use ASCII for frequently changing text, eg. FPS, RAM stat. etc. only set this parameter to `true` for relatively static text when you really need
+	* `isutf`: `true` for UTF text, otherwise for ASCII; UTF `String` is cached until ejecting a disk, so it's recommended to use ASCII for frequently changing text, e.g. FPS, RAM stat. etc. only set this parameter to `true` for relatively static text when you really need
 * **static** `plot(x, y, col)`: draws a point in screen space
 	* `col`: `Color`
 * **static** `line(x0, y0, x1, y1, w, col)`: draws a line in screen space
@@ -564,7 +566,7 @@ Ln     Sets the duration (length) of the notes. The variable n does not indicate
        amount but rather a note type; L1 - whole note, L2 - half note, L4 - quarter note, etc.
        (L8, L16, L32, L64, ...). By default, n = 4.
        For triplets and quintets, use L3, L6, L12, ... and L5, L10, L20, ... series respectively.
-       The shorthand notation of length is also provided for a note. Eg. "L4 CDE L8 FG L4 AB"
+       The shorthand notation of length is also provided for a note. E.g. "L4 CDE L8 FG L4 AB"
        can be shortened to "L4 CDE F8G8 AB". F and G play as eighth notes while others play as quarter notes.
 On     Sets the current octave. Valid values for n are 0 through 6. An octave begins with C and ends with B.
        Remember that C- is equivalent to B. 
@@ -685,7 +687,7 @@ import "coroutine" for Coroutine
 
 **Class `Coroutine`**
 
-[Coroutine](https://en.wikipedia.org/wiki/Coroutine) can suspend their execution and allows re-entry at multiple entry points. This `Coroutine` dispatcher in Crapht Box acts similar to the Unity3D's, it accepts and manages Wren `Fiber` and updates them at a specific time point.
+[Coroutine](https://en.wikipedia.org/wiki/Coroutine) can suspend their execution and allows re-entry at multiple entry points. This `Coroutine` dispatcher accepts and manages Wren `Fiber` and updates them at a specific time point, just acts similar to the Unity3D's.
 
 * `construct new()`: constructs a `Coroutine` dispatcher
 
@@ -697,7 +699,7 @@ import "coroutine" for Coroutine
 	* `co`: `Fn`/`Fiber`
 	* `...`: the option arguments
 
-* `update(delta)`: updates this dispatcher
+* `update(delta)`: updates through all fibers of this dispatcher; this function is often called in a `Program`-wise `update` procedure
 	* `delta`: the elapsed time in seconds since last updating
 
 ### Datetime module
@@ -802,12 +804,12 @@ import "io" for Path, File, FileInfo, DirectoryInfo
 
 * **static** `getFiles(path, pattern [, recursive])`: gets all files under a specific directory
 	* `path`: the path `String`
-	* `pattern`: the searching pattern, eg. `"*"`, `"*.json"`, `"*_data_??.txt"`
+	* `pattern`: the searching pattern, e.g. `"*"`, `"*.json"`, `"*_data_??.txt"`
 	* `recursive`: whether searches recursively, defaults to `false`
 	* returns the matched files as a `List` of path `String`
 * **static** `getDirectories(path [, recursive])`: gets all directories under a specific directory
 	* `path`: the path `String`
-	* `pattern`: the searching pattern, eg. `"*"`, `"*saved*"`
+	* `pattern`: the searching pattern, e.g. `"*"`, `"*saved*"`
 	* `recursive`: whether searches recursively, defaults to `false`
 	* returns the matched directories as a `List` of path `String`
 
@@ -927,11 +929,11 @@ import "io" for Path, File, FileInfo, DirectoryInfo
 	* returns `true` for success, otherwise `false`
 
 * `getFiles(pattern [, recursive])`: gets all files under this directory
-	* `pattern`: the searching pattern, eg. `"*"`, `"*.json"`, `"*_data_??.txt"`
+	* `pattern`: the searching pattern, e.g. `"*"`, `"*.json"`, `"*_data_??.txt"`
 	* `recursive`: whether searches recursively, defaults to `false`
 	* returns the matched files as a `List` of path `String`
 * `getDirectories([recursive])`: gets all sub directories under this directory
-	* `pattern`: the searching pattern, eg. `"*"`, `"*saved*"`
+	* `pattern`: the searching pattern, e.g. `"*"`, `"*saved*"`
 	* `recursive`: whether searches recursively, defaults to `false`
 	* returns the matched directories as a `List` of path `String`
 
@@ -948,7 +950,9 @@ import "json" for Json
 
 **Class `Json`**
 
+<!--
 * **static** `OrderedKey`: the helper key constant in a JSON object which only tells the order
+-->
 
 <!--
 * **static** `tokenize(string)`: gets a `List` of tokens of a JSON `String`
@@ -1771,7 +1775,7 @@ Use the following constants to get/set properties with `Handle.get`/`Handle.set`
 
 * **static** `new(hworld, type, pos)`: creates a `Chip` element
 	* `hworld`: the parent `World` handle
-	* `type`: the type of the `Chip` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Chip.ConstantByte`
+	* `type`: the type of the `Chip` element, can be one of the above constants plus a `Body` type constant, e.g. `Body.Dynamic | Chip.ConstantByte`
 	* `pos`: the initial position
 	* returns the created `Chip` handle or `null`
 
@@ -1798,7 +1802,7 @@ import "sensor" for Sensor
 
 * **static** `new(hworld, type, pos)`: creates a `Sensor` element
 	* `hworld`: the parent `World` handle
-	* `type`: the type of the `Sensor` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Sensor.GamepadDown`
+	* `type`: the type of the `Sensor` element, can be one of the above constants plus a `Body` type constant, e.g. `Body.Dynamic | Sensor.GamepadDown`
 	* `pos`: the initial position
 	* returns the created `Sensor` handle or `null`
 
@@ -1841,7 +1845,7 @@ Use the following constants to get/set properties with `Handle.get`/`Handle.set`
 
 * **static** `new(hworld, type, pos)`: creates a `Dynamics` element
 	* `hworld`: the parent `World` handle
-	* `type`: the type of the `Dynamics` element, can be one of the above constants plus a `Body` type constant, eg. `Body.Dynamic | Dynamics.Jet`
+	* `type`: the type of the `Dynamics` element, can be one of the above constants plus a `Body` type constant, e.g. `Body.Dynamic | Dynamics.Jet`
 	* `pos`: the initial position
 	* returns the created `Dynamics` handle or `null`
 
@@ -1929,6 +1933,8 @@ import "camera" for Camera
 
 **Class `Camera`**
 
+This class controls the behaviour of the main camera in-scene.
+
 * **static** `wireframe`: gets the wireframe style of this camera, can be on of the values of the `Component` class in module "common"
 * **static** `wireframe = (value)`: sets the wireframe style of this camera
 
@@ -1972,6 +1978,8 @@ import "minimap" for Minimap
 
 **Class `Minimap`**
 
+This class controls the behaviour of the top-right minimap in-scene.
+
 * **static** `visible`: gets whether the minimap overlay is visible
 * **static** `visible = (value)`: sets whether the minimap overlay is visible
 
@@ -1988,13 +1996,16 @@ import "toolbox" for Toolbox
 
 **Class `Toolbox`**
 
+This class controls the behaviour of the right side toolbox in-scene.
+
 * **static** `visible`: gets whether the toolbox overlay is visible
 * **static** `visible = (value)`: sets whether the toolbox overlay is visible
 
 * **static** `setAvailable(available [, category [, name]])`: sets the availability of a specific tool in the toolbox
 	* `available`: `true` for available, otherwise for unavailable
-	* `category`: the specific category, defaults to `"*"`
-	* `name`: the specific name, defaults to `"*"`
+	* `category`: the specific category, defaults to `"*"` for all
+	* `name`: the specific name, defaults to `"*"` for all
+	* returns the count of the affected elements
 
 * **static** `instantiate(hparent, category, name, pos, rot [, contactable [, operable [, group]]])`: instantiates a specific tool from the toolbox into the sandbox
 	* `hparent`: the parent `Handle`, generally pass a valid `World` handle to it
@@ -2028,6 +2039,8 @@ import "sandbox" for AskParam, Sandbox
 * **static** `Default`: composited by `AskParam.InstantiatedOnly`, `AskParam.OperableOnly` and `AskParam.Multiple`
 
 **Class `Sandbox`**
+
+This class controls the behaviour of the main scene itself.
 
 * **static** `operable`: gets whether the sandbox is operable
 * **static** `operable = (value)`: sets whether the sandbox is operable
@@ -2081,6 +2094,8 @@ import "history" for History
 ```
 
 **Class `History`**
+
+This class controls the behaviour of the history stack in-scene.
 
 * **static** `isEmpty`: gets whether the history stack does not contain any undoable operation
 * **static** `count`: gets the count of the undoable operations of the history stack
@@ -2324,10 +2339,11 @@ import "layout" for Container, Panel, Flow, Grid, Layout
 **Class `Container`**
 
 * `construct new()`: constructs a `Container` overlay
-<!--
-* `construct new(f)`: constructs a `Container` overlay
+
+<!-- * `construct new(f)`: constructs a `Container` overlay
 	* `f`: the refresh function
 -->
+
 * `construct new(x, y)`: constructs a `Container` overlay
 	* `x`: the x position
 	* `y`: the y position
@@ -2465,6 +2481,8 @@ import "dictionary" for Dictionary
 
 **Class `Dictionary`**
 
+This class stores text information with specific ID for different languages.
+
 * `construct new()`: constructs a `Dictionary` collection
 
 * `[id]`: gets the text of a specific ID, same as `get(id)`
@@ -2526,18 +2544,24 @@ import "star" for Star
 
 **Class `Star`**
 
-* `construct new(hasVar, getVar, setVar)`: constructs a `Star` object
-	* `hasVar`: the function to check a variable in the current program
-	* `getVar`: the function to get a variable in the current program
-	* `setVar`: the function to set a variable in the current program
+This class stores a number of customizable missions for each disk. The `Star` class is just a data structure excluding any GUI layout.
 
-* `[index]`: gets the star point of a specific index
+* `construct new(hasVar, getVar, setVar)`: constructs a `Star` object
+	* `hasVar`: the function to check a variable in the current program, e.g. `Fn.new { | key | hasVariable(key) }`
+	* `getVar`: the function to get a variable in the current program, e.g. `Fn.new { | key | getVariable(key) }`
+	* `setVar`: the function to set a variable in the current program, e.g. `Fn.new { | key, value | setVariable(key, value) }`
+
+* `toString`: gets the `String` representation of the value
+
+* `[index]`: gets the star point of a specific index, same as `get(index)`
 
 * `isEmpty`: gets whether this `Star` object is empty
 	* returns `true` for empty, otherwise `false`
 * `count`: gets the star point count
 
+<!--
 * `stars`: gets all star points
+-->
 
 * `indexOf(key)`: gets the index of a specific star key
 * `contains(key)`: gets whether this object contains a specific star key
@@ -2545,9 +2569,14 @@ import "star" for Star
 * `add(key, msg)`: adds a star point with a specific key and message
 * `clear()`: clears all star points
 
-* `complete(index)`: marks a specific star point completed
+* `complete(index [, shadow])`: marks a specific star point completed
+	* `index`: `Num`/`String`; either the index or key of a star point
+	* `shadow`: `false` to set the corresponding variable, `true` for shadowy, defaults to `false`
 * `completed(index)`: gets whether a specific star point is completed
-* `completeness`: gets the completeness data of this object
+	* `index`: `Num`/`String`; either the index or key of a star point
+
+<!-- * `completeness`: gets the completeness data of this object
+-->
 
 <!--
 * `iterate(iterator)`: iterates over all star points
@@ -2586,8 +2615,10 @@ import "prefab" for Prefab
 * **static** `new(hworld, name, options)`: creates a prefab
 	* `hworld`: the parent `World` handle
 -->
+
 * **static** `instantiate(hworld, name, options)`: instantiates a prefab
 	* `hworld`: the parent `World` handle
+	* returns the instantiated element `Handle` or `null`
 
 ## Application
 
@@ -2820,13 +2851,13 @@ The built-in code editor loads the entry source code of the selected disk. To ed
 
 Switch to the `Packs` tab, then load the `Editor/Map Editor` disk. See in-disk help for details.
 
-This editor is for static graphics layers, eg. background, sky, terrain. In the usual case it saves to the "`${disk}`/content/map.map" and "`${disk}`/content/scene.json" file.
+This editor is for static graphics layers, e.g. background, sky, terrain. In the usual case it saves to the "`${disk}`/content/map.map" and "`${disk}`/content/scene.json" file.
 
 ## Level editor
 
 Switch to the `Packs` tab, then load the `Editor/Level Editor` disk. See in-disk help for details.
 
-This editor is for static environments, eg. goal, credit, wall. In the usual case it saves to the "`${disk}`/content/scene.json" file.
+This editor is for static environments, e.g. goal, credit, wall. In the usual case it saves to the "`${disk}`/content/scene.json" file.
 
 ## Element editor
 
