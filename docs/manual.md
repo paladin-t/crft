@@ -372,12 +372,10 @@ import "compiler/lua" for Lua
 * `compile(code)`: compiles Lua code to Wren
 	* `code`: the source in Lua
 	* returns the compiled code object
-<!--
-* `compile(code, debug)`: compiles Lua code to Wren
+<!-- * `compile(code, debug)`: compiles Lua code to Wren
 	* `code`: the source in Lua
 	* `debug`: whether generates debug information
-	* returns the compiled code object
--->
+	* returns the compiled code object -->
 
 Eg.
 
