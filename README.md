@@ -6,6 +6,7 @@
 
 [简体中文](https://paladin-t.github.io/crft/README_cn) |
 [Manual](https://paladin-t.github.io/crft/docs/manual) |
+[Elements](https://paladin-t.github.io/crft/docs/elements) |
 [Slides](https://paladin-t.github.io/crft/docs/slides) |
 [About](https://paladin-t.github.io/crft/pages/about)
 

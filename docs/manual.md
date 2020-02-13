@@ -9,7 +9,7 @@ Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. 
 
 ## Table of content
 
-* Part I. Fundamental
+* [Part I. Fundamental](#part-i-fundamental)
 	* [Operations](#operations)
 	* [Capturing](#capturing)
 		* [Screenshot](#screenshot)
@@ -17,13 +17,13 @@ Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. 
 	* [Specifications](#specifications)
 	* [Disk structure](#disk-structure)
 
-* Part II. Crafting
+* [Part II. Crafting](#part-ii-crafting)
 	* [Physics elements](#physics-elements)
 	* [Sensor elements](#sensor-elements)
 	* [Chip elements](#chip-elements)
 	* [Dynamics elements](#dynamics-elements)
 
-* Part III. Programming
+* [Part III. Programming](#part-iii-programming)
 	* [Physics engine](#physics-engine)
 	* [Syntax](#syntax)
 		* [Wren](#wren)
@@ -77,13 +77,13 @@ Crapht Box is a Fantasy Physics Sandbox, inspired by the Fantasy Console genre. 
 	* [In-disk](#in-disk)
 		* [Disk module](#disk-module)
 
-* Part IV. Editors
+* [Part IV. Editors](#part-iv-editors)
 	* [Code editor](#code-editor)
 	* [Map editor](#map-editor)
 	* [Level editor](#level-editor)
 	* [Element editor](#element-editor)
 
-* Part V. Sharing
+* [Part V. Sharing](#part-v-sharing)
 	* [Workshop](#workshop)
 		* [Submitting](#submitting)
 		* [Subscribing](#subscribing)
@@ -157,6 +157,8 @@ Press `F7` to record frames for GIF, press `F8` to stop GIF recording, it prompt
 * Gamepad: 6 buttons (D-Pad + A/B)
 * Keyboard and mouse: supported
 
+You can bind the gamepad buttons to keyboard or a gamepad device. The `Left`, `Right`, `Up`, `Down`, `A`, `B` are respectively binded to the `A`, `D`, `W`, `S`, `J`, `K` by default, you can change it in the `Option` tab.
+
 ## Disk structure
 
 A typical disk comes with the following files under "`${disk}`/content":
@@ -217,120 +219,19 @@ There are four element categories in the crafting toolbox.
 
 ## Physics elements
 
-<!--
-"phy/box"
-"phy/sphere"
-"phy/pyramid"
-"phy/slope"
-"phy/wheel"
-"phy/focus"
-"phy/bouncy_box"
-"phy/bouncy_sphere"
-"phy/bouncy_pyramid"
-"phy/bouncy_slope"
-"phy/static_box"
-"phy/static_sphere"
-"phy/static_pyramid"
-"phy/static_slope"
-"phy/iron_box"
-"phy/iron_sphere"
-"phy/iron_pyramid"
-"phy/iron_slope"
--->
-
-The physics category contains regular rigid bodies in a few shapes. It is the simplest structure in Crapht Box that does not conduct anything in a circuit, but it does work as framework in the physical scene. See tooltips in application for details.
+The physics category contains regular rigid bodies in a few shapes. It is the simplest structure in Crapht Box that does not conduct anything in a circuit, but it does work as framework in the physical scene. See [physics elements](https://paladin-t.github.io/crft/docs/elements#physics-elements) for items. See tooltips in application for details.
 
 ## Sensor elements
 
-<!--
-"snsr/btn"
-"snsr/btnp"
-"snsr/toggle"
-"snsr/touch"
-"snsr/touchp"
-"snsr/touch_relay"
-"snsr/touchp_relay"
-"snsr/cross_gate"
-"snsr/contact_gate"
-"snsr/gravity"
--->
-
-The sensor category contains gamepad input, mouse/touch input, in-scene interactable sensors, etc. Sensor can be used as signal source in a circuit. See tooltips in application for details.
+The sensor category contains gamepad input, mouse/touch input, in-scene interactable sensors, etc. Sensor can be used as signal source in a circuit. See [sensor elements](https://paladin-t.github.io/crft/docs/elements#sensor-elements) for items. See tooltips in application for details.
 
 ## Chip elements
 
-<!--
-"chip/constant_byte"
-"chip/constant_ascii"
-"chip/randomizer_byte"
-"chip/pulse"
-"chip/register"
-"chip/accumulator"
-"chip/relay"
-"chip/delay"
-"chip/fuse"
-"chip/trigger_edge"
-"chip/trigger_difference"
-"chip/wire_i"
-"chip/wire_l"
-"chip/wire_y"
-"chip/wireless_sender"
-"chip/wireless_receiver"
-"chip/dot"
-"chip/led"
-"chip/ascii"
-"chip/ssd"
-"chip/decoder_num2ssd"
-"chip/neg"
-"chip/add"
-"chip/sub"
-"chip/mul"
-"chip/div"
-"chip/mod"
-"chip/abs"
-"chip/eq"
-"chip/neq"
-"chip/lt"
-"chip/leq"
-"chip/gt"
-"chip/geq"
-"chip/and"
-"chip/or"
-"chip/not"
-"chip/xor"
-"chip/band"
-"chip/bor"
-"chip/bnot"
-"chip/bxor"
-"chip/lshift"
-"chip/rshift"
-"chip/environment_now"
--->
-
-The chip category contains signal producers, conductors, mappers, consumers, etc. Chip can be used as signal source, intermediate node or output reactor in a circuit. See tooltips in application for details.
+The chip category contains signal producers, conductors, mappers, consumers, etc. Chip can be used as signal source, intermediate node or output reactor in a circuit. See [chip elements](https://paladin-t.github.io/crft/docs/elements#chip-elements) for items. See tooltips in application for details.
 
 ## Dynamics elements
 
-<!--
-"dyn/jet"
-"dyn/rocket"
-"dyn/airscrew"
-"dyn/tnt"
-"dyn/motor"
-"dyn/crawler_belt"
-"dyn/rifle"
-"dyn/shotgun"
-"dyn/flamethrower"
-"dyn/laser"
-"dyn/electromagnet"
-"dyn/spider_silk"
-"dyn/hydropress"
-"dyn/escapement"
-"dyn/catcher"
-"dyn/tone_square"
--->
-
-The dynamics category contains power sources, weapons, etc. Dynamics can be used as output reactor in a circuit. See tooltips in application for details.
+The dynamics category contains power sources, weapons, etc. Dynamics can be used as output reactor in a circuit. See [dynamics elements](https://paladin-t.github.io/crft/docs/elements#dynamics-elements) for items. See tooltips in application for details.
 
 [HOME](#welcome-to-crapht-box)
 
@@ -2837,9 +2738,13 @@ import "disk" for Convert, Operate, Load, Storyboard, Stopwatch
 
 Crapht Box offers built-in editors to edit entry source code, map, level and element.
 
+Switch to the `Workshop` tab, then click the explore button to browse the directory of your disk:
+
+![](imgs/gui/button_explore.png)
+
 ## Code editor
 
-Switch to the `Workshop` tab, then click the edit button to edit your creations:
+Switch to the `Workshop` tab, then click the edit button to edit your main source code:
 
 ![](imgs/gui/button_edit.png)
 
@@ -2909,7 +2814,7 @@ All subscribed disks are supposed to be updated automatically when Crapht Box bo
 
 ### Forking
 
-Click `Fork` to derive from a selected disk.
+Click `Fork` to clone a selected disk.
 
 ## Archiving
 

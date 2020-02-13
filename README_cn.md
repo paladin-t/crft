@@ -6,6 +6,7 @@
 
 [English](https://paladin-t.github.io/crft/) |
 [手册](https://paladin-t.github.io/crft/docs/manual_cn) |
+[元件](https://paladin-t.github.io/crft/docs/elements_cn) |
 [图示](https://paladin-t.github.io/crft/docs/slides_cn) |
 [关于](https://paladin-t.github.io/crft/pages/about_cn)
 
