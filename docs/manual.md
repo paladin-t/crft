@@ -176,7 +176,7 @@ A typical disk comes with the following files under "`${disk}`/content":
 | "main.palette" | Palette file | N/A |
 | "sticker.png" | Disk sticker | Built-in capturing, or external image editors |
 
-The meta data file "info.json" contains a number of fields that describe basic aspects of a disk. You might change some of them once you create a new one:
+The meta data file "info.json" contains a number of fields that describe basic aspects of a disk. You might want to change some of it after creating a new disk. It can be loaded by `Load.diskInfo()` with module "disk". E.g.
 
 ```js
 {
@@ -208,6 +208,86 @@ The meta data file "info.json" contains a number of fields that describe basic a
 	"priority": 100,             // A integer which controls display orders of disks.
 	"locked": false              // You have to pass previous levels before unlocking
 	                             // this one with `true`, or ready to play with `false`.
+}
+```
+
+The "dictionary.json" contains text information for runtime lookup. It can be loaded by the `Dictionary` class in module "dictionary". E.g.
+
+```js
+{
+	"english": {
+		"greeting": "Ahoy!",
+
+		"stars": "Missions",
+		"stars/goal/tips": "Reach the goal",
+		"stars/defeat/tips": "Defeat the enemies",
+		"stars/time/tips": "Complete in 90s"
+	},
+	"chinese": {
+		"greeting": "嗨！",
+
+		"stars": "任务",
+		"stars/goal/tips": "到达目标点",
+		"stars/defeat/tips": "打败敌人",
+		"stars/time/tips": "在 90 秒内通关"
+	}
+}
+```
+
+The "storyboard.json" can be loaded by the `Storyboard` class in module "disk". E.g.
+
+```js
+{
+	"storyboard": {
+		"load": [
+			{
+				"type": "chat",
+				"text": "greeting"
+			},
+			{
+				"type": "say",
+				"text": "ahoy."
+			}
+		]
+	}
+}
+```
+
+The "toolbox.json" can be loaded by `Load.toolAvailability(...)` with module "disk". E.g.
+
+```js
+{
+	"availability": [
+		{
+			"category": "*",
+			"name": "*",
+			"value": true
+		}
+	]
+}
+```
+
+The "scene.json" can be loaded by `Load.sceneGraph(...)` with module "disk". E.g.
+
+```js
+{
+	"map": "map.map",
+	"toolbox": [
+	],
+	"prefab": [
+		{
+			"type": "create",
+			"category": "prefab",
+			"name": "goal_text",
+			"position": [
+				42.5, 2.5
+			],
+			"rotation": [
+				0, 1
+			],
+			"tag": "goal"
+		}
+	]
 }
 ```
 
