@@ -48,8 +48,8 @@
 
 | 名称 | 图标 |
 |---|---|
-| "chip/constant_byte" | ![](imgs/element/chip_constant_byte.png) |
-| "chip/constant_ascii" | ![](imgs/element/chip_constant_ascii.png) |
+| "chip/constant_byte" | ![](imgs/element/chip_byte_blue.png) |
+| "chip/constant_ascii" | ![](imgs/element/chip_ascii_blue.png) |
 | "chip/randomizer_byte" | ![](imgs/element/chip_randomizer_byte.png) |
 | "chip/pulse" | ![](imgs/element/chip_pulse.png) |
 | "chip/register" | ![](imgs/element/chip_register.png) |
@@ -66,7 +66,7 @@
 | "chip/wireless_receiver" | ![](imgs/element/chip_wireless_receiver.png) |
 | "chip/dot" | ![](imgs/element/chip_dot.png) |
 | "chip/led" | ![](imgs/element/chip_led.png) |
-| "chip/ascii" | ![](imgs/element/chip_ascii.png) |
+| "chip/ascii" | ![](imgs/element/chip_ascii_red_contrast.png) |
 | "chip/ssd" | ![](imgs/element/chip_ssd.png) |
 | "chip/decoder_num2ssd" | ![](imgs/element/chip_decoder_num2ssd.png) |
 | "chip/neg" | ![](imgs/element/chip_neg.png) |
@@ -92,7 +92,7 @@
 | "chip/bxor" | ![](imgs/element/chip_bxor.png) |
 | "chip/lshift" | ![](imgs/element/chip_lshift.png) |
 | "chip/rshift" | ![](imgs/element/chip_rshift.png) |
-| "chip/environment_now" | ![](imgs/element/chip_environment_now.png) |
+| "chip/environment_now" | ![](imgs/element/chip_now.png) |
 
 ## 动力元件
 
@@ -113,4 +113,4 @@
 | "dyn/hydropress" | ![](imgs/element/dyn_hydropress.png) |
 | "dyn/escapement" | ![](imgs/element/dyn_escapement.png) |
 | "dyn/catcher" | ![](imgs/element/dyn_catcher.png) |
-| "dyn/tone_square" | ![](imgs/element/dyn_tone_square.png) |
+| "dyn/tone_square" | ![](imgs/element/dyn_tone_green.png) |
