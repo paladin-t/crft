@@ -526,7 +526,7 @@ import "basic" for Basic, Terminal, Resource
 * **static** `touchm()`: gets the current mouse position
 	* returns `Vec2` for the valid position, otherwise `null`
 
-* **static** `play(seq, channel, preset, loop)`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) `String`; use `Basic.play("P", ch)` to stop music at a specific channel, or use the following `stop` instead
+* **static** `play(seq, channel, preset, loop)`: plays an [MML](https://en.wikipedia.org/wiki/Music_Macro_Language) (Music Macro Language) `String`; use `Basic.play("P", ch, 0, false)` to stop music at a specific channel, or use the following `stop` instead
 	* `seq`: the MML format `String`
 	* `channel`: the channel to play with
 	* `preset`: the preset index in the sound font
@@ -537,7 +537,7 @@ import "basic" for Basic, Terminal, Resource
 The tones are indicated by letters `A` through `G`. Accidentals are indicated with a `+` or `#` (for sharp) or `-` (for flat) immediately after the note letter. See this example:
 
 ```dart
-Basic.play("C C# C C#")
+Basic.play("C C# C C#", 0, 0, false)
 ```
 
 Whitespaces are ignored inside the string expression. There are also codes that set the duration, octave and tempo. They are all case-insensitive. `play` executes the commands or notes the order in which they appear in the string. Any indicators that change the properties are effective for the notes following that indicator.
