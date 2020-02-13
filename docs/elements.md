@@ -32,16 +32,16 @@ Press `Ctrl`+`F` to open the tool search box, and type in the expected element n
 
 | Name | Icon |
 |---|---|
-| "snsr/btn" | ![](imgs/element/sensor_btn.png) |
-| "snsr/btnp" | ![](imgs/element/sensor_btnp.png) |
-| "snsr/toggle" | ![](imgs/element/sensor_toggle.png) |
-| "snsr/touch" | ![](imgs/element/sensor_touch.png) |
-| "snsr/touchp" | ![](imgs/element/sensor_touchp.png) |
-| "snsr/touch_relay" | ![](imgs/element/sensor_touch_relay.png) |
-| "snsr/touchp_relay" | ![](imgs/element/sensor_touchp_relay.png) |
-| "snsr/cross_gate" | ![](imgs/element/sensor_cross_gate.png) |
-| "snsr/contact_gate" | ![](imgs/element/sensor_contact_gate.png) |
-| "snsr/gravity" | ![](imgs/element/sensor_gravity.png) |
+| "snsr/btn" | ![](imgs/element/snsr_btn.png) |
+| "snsr/btnp" | ![](imgs/element/snsr_btnp.png) |
+| "snsr/toggle" | ![](imgs/element/snsr_toggle.png) |
+| "snsr/touch" | ![](imgs/element/snsr_touch.png) |
+| "snsr/touchp" | ![](imgs/element/snsr_touchp.png) |
+| "snsr/touch_relay" | ![](imgs/element/snsr_touch_relay.png) |
+| "snsr/touchp_relay" | ![](imgs/element/snsr_touchp_relay.png) |
+| "snsr/cross_gate" | ![](imgs/element/snsr_cross_gate.png) |
+| "snsr/contact_gate" | ![](imgs/element/snsr_contact_gate.png) |
+| "snsr/gravity" | ![](imgs/element/snsr_gravity.png) |
 
 ## Chip elements
 
