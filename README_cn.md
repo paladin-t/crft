@@ -12,8 +12,6 @@
 
 **获取 Crapht Box!**
 
-发售日期待定
-
 [![Steam 上的 Crapht Box](pages/imgs/steam.png)](https://store.steampowered.com/app/1227090/)
 
 | 幻想 | 物理沙盒 |
@@ -62,8 +60,6 @@
 分享你的创意。
 
 ### 获取 Crapht Box
-
-发售日期待定
 
 [![Steam 上的 Crapht Box](pages/imgs/on_steam.png)](https://store.steampowered.com/app/1227090/)
 
