@@ -1,4 +1,3 @@
-[简体中文](https://paladin-t.github.io/crft/docs/manual_cn) |
 [Homepage](https://paladin-t.github.io/crft/)
 
 ![](imgs/logo.png)
