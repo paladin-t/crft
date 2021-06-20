@@ -67,7 +67,7 @@
 
 | | 最低 | 推荐 |
 |----|----|----|
-| 操作系统 | Windows 7/8/10 (32/64bit) | Windows 7/8/10 (32/64bit) |
+| 操作系统 | Windows 7 及以上 (32/64bit) | Windows 7 及以上 (32/64bit) |
 | CPU | Core 2 Duo 1.8GHz | Core i5 2.6GHz |
 | 内存 | 512MB | 2GB |
 | 显卡 | Intel HD 4000 | Intel HD 6000 |

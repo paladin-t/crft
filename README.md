@@ -67,7 +67,7 @@ Share your creativity with others.
 
 | | Minimum | Recommended |
 |----|----|----|
-| OS | Windows 7/8/10 (32/64bit) | Windows 7/8/10 (32/64bit) |
+| OS | Windows 7 or later (32/64bit) | Windows 7 or later (32/64bit) |
 | CPU | Core 2 Duo 1.8GHz | Core i5 2.6GHz |
 | RAM | 512MB | 2GB |
 | GPU | Intel HD 4000 | Intel HD 6000 |
